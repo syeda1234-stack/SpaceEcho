@@ -16,7 +16,6 @@ SpaceEcho contains several different kinds of visuals. **NASA photographs are id
 - **Phoenix landing-site panorama (PIA10735)** — `images/phoenix-site-panorama-pia10735.jpg`. NASA/JPL-Caltech/University of Arizona/Texas A&M. NASA source: https://science.nasa.gov/photojournal/phoenix-site-panorama/.
 - **Pioneer 11 Saturn, rings and Titan flyby image** — `images/pioneer11-saturn-rings.jpeg`. NASA/Ames. This is a genuine image taken by Pioneer 11 during its September 1, 1979 Saturn flyby, not a generic Saturn illustration. NASA source: https://science.nasa.gov/image-detail/amf-cf2ae57d-b5f0-42ea-b5e3-c955208bc278/.
 - **Pioneer plaque mounted on spacecraft structure (ARC-1972-A72-2137)** — `images/pioneer-plaque-spacecraft-arc.jpg`. NASA Ames Research Center archival photograph. The plaque design was carried by Pioneer 10 and Pioneer 11. NASA plaque background: https://science.nasa.gov/resource/pioneer-plaque/.
-- **Pioneer plaque installation archival detail (739463main_a73-9015-1)** — `images/pioneer-plaque-spacecraft-detail.jpg`. NASA Ames archival image supplied for this project. It is an archival view of the plaque installation, not a photograph of the spacecraft in flight.
 - **Pioneer plaque close-up** — `images/pioneer-plaque-closeup.png`. NASA/Ames plaque image. Both Pioneer 10 and Pioneer 11 carried the plaque design. NASA source: https://science.nasa.gov/resource/pioneer-plaque/.
 
 ## NASA photographs loaded from NASA-hosted sources when available
@@ -59,7 +58,7 @@ The Moon and Mars globe images are overview illustrations only. Mission markers 
 
 ## Infographic / derived visual — not a mission photograph
 
-- `images/rover-distance-record.png` — NASA/JPL-Caltech rover-distance comparison graphic. It is a dated infographic, not a photograph or live telemetry. The website labels the October 2026 snapshot; check the displayed date before presenting it as current.
+- `images/rover-distance-record.png` — rover-distance comparison infographic. Its original publisher, source URL, and reuse terms have not been independently verified, so SpaceEcho does not attribute it to NASA/JPL-Caltech. Do not present it as official NASA material; remove it from the public build unless its provenance and reuse permission can be confirmed.
 
 ## Attribution and presentation rules
 
