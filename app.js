@@ -163,6 +163,7 @@ function renderMissionWorld(key){
  worldTabs.forEach(t=>{const active=t.dataset.world===key;t.classList.toggle("active",active);t.setAttribute("aria-selected",String(active));});
  document.getElementById("mapWorldName").textContent=w.name;
  document.getElementById("mapSourceLabel").textContent=view.source;
+ document.getElementById("aiGlobeWatermark").hidden=key==="vesta";
  if(key==="vesta"){
   mapEl.classList.add("archive-view");document.getElementById("mapHint").textContent="BEYOND THE PLANETS · TAP A MOVING DESTINATION";renderBeyondCards();resetSurfaceView();
  }else{
