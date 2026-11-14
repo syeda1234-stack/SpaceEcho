@@ -383,3 +383,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #82e7
 /* Visible image provenance labels on mission cards */
 .visual-credit-tag{position:absolute;left:8px;bottom:8px;z-index:2;max-width:calc(100% - 16px);padding:4px 7px;border:1px solid #ffffff38;border-radius:5px;background:#050912e8;color:#d9e5f8;font-size:8px;font-weight:700;letter-spacing:.7px;line-height:1.25}
 .artifact-visual img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
+
+
+/* Visible AI watermark on the generated Moon and Mars globe illustrations. */
+.ai-globe-watermark{position:absolute;z-index:550;right:16px;bottom:58px;padding:7px 10px;border:1px solid rgba(226,235,255,.45);border-radius:5px;background:rgba(3,8,18,.82);color:#f0f4ff;font:700 9px "Space Grotesk",sans-serif;letter-spacing:.13em;line-height:1.3;pointer-events:none;backdrop-filter:blur(5px);text-shadow:0 1px 2px #000}
+.ai-globe-watermark[hidden]{display:none}
+@media(max-width:560px){.ai-globe-watermark{right:9px;bottom:58px;padding:6px 8px;font-size:8px;letter-spacing:.09em}}
