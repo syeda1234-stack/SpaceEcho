@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070b18">
+<meta name="description" content="SpaceEcho — the missions ended. Their stories didn't. Explore the stories and science of NASA's retired space hardware.">
+<title>SpaceEcho — The missions ended. Their stories didn't.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="starfield" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="SpaceEcho home"><span class="brand-mark">◉</span><span class="brand-name">SpaceEcho</span><small>Explore. Discover. Remember.</small></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+  <nav id="mainNav"><a href="#solar">Solar System</a><a href="#planetary-explorer">Moon, Mars &amp; Beyond</a><a href="#moonlab">Real data</a><a href="#about">About</a></nav>
+  
+  <a class="nav-cta" href="#moonlab">See the NASA data <span>↓</span></a>
+</header>
+
+<main id="home">
+<section class="solar" id="solar">
+ <div class="solar-head"><div><span class="section-kicker">THE LIVE SOLAR SYSTEM</span><h2>Tap a world. Hear its story.</h2></div><p>Planets, dwarf planets and asteroids are on the move. Tap one to fly in. A pulsing gold ring means machines left an echo there, and the panel will take you to their stories below.</p></div>
+ <div class="solar-stage"><canvas id="solarCanvas" aria-label="Animated map of the Solar System. Use the buttons below to choose a world."></canvas>
+  <div class="solar-ctl"><button data-sp="0" aria-pressed="false" aria-label="Pause">⏸</button><button data-sp="1" aria-pressed="true">1×</button><button data-sp="5" aria-pressed="false">5×</button><button id="tourBtn">▶ Tour</button><button id="homeBtn">⤢ All planets</button></div>
+  <aside id="bodyPanel" class="body-panel" aria-live="polite"></aside></div>
+ <div class="chips" id="chips" aria-label="Choose a world"></div>
+ <p class="solar-note">Sizes, distances and speeds are squeezed to fit the screen and are not to scale. Stories link to NASA pages.</p>
+</section>
+<section class="planetary-explorer" id="planetary-explorer">
+ <div class="explorer-heading"><div><span class="section-kicker">SPACEECHO · PLANETARY ARCHIVE</span><h2>Explore the worlds. Find the echoes.</h2><p>Start with the whole world, zoom to reveal mission pins, then select one story to see its photographs and history.</p></div></div>
+ <div class="world-tabs" role="tablist" aria-label="Choose a world">
+  <button class="world-tab active" data-world="moon" role="tab" aria-selected="true"><span class="world-icon moon-icon"></span><span><b>THE MOON</b><small>Full globe</small></span></button>
+  <button class="world-tab" data-world="mars" role="tab" aria-selected="false"><span class="world-icon mars-icon"></span><span><b>MARS</b><small>Full globe</small></span></button>
+  <button class="world-tab" data-world="vesta" role="tab" aria-selected="false"><span class="world-icon vesta-icon"></span><span><b>BEYOND</b><small>Asteroids · deep space</small></span></button>
+  <button class="guide-open" id="guideOpen" type="button" aria-label="How to explore SpaceEcho" title="How to explore">? <span>HOW TO EXPLORE</span></button>
+ </div>
+ <div class="mission-console" id="missionConsole">
+  <div class="map-stage">
+   <div class="map-topline"><span id="mapWorldName">MOON / GLOBAL SURFACE</span><span class="map-source-label" id="mapSourceLabel">AI-GENERATED FULL GLOBE ILLUSTRATION</span></div>
+   <div id="planetMap" role="application" aria-label="Interactive planetary globe with mission markers"></div>
+   <div class="map-hint" id="mapHint">ZOOM TO REVEAL MISSION NAMES · DRAG TO PAN · SELECT A PIN</div>
+   <div class="map-bottomline"><span id="mapMarkerCount">STORY MARKERS</span><span id="openTrek" aria-hidden="true"></span></div>
+  </div>
+  <aside class="mission-sidebar" aria-hidden="true">
+   <div class="mission-detail" id="missionDetail"></div>
+  </aside>
+ </div>
+ <p class="explorer-note">Pins are illustrative, not exact coordinates. Moon and Mars globes are AI-generated illustrations; mission photographs are credited NASA imagery. SpaceEcho is not an official NASA website.</p>
+</section>
+
+<section class="intro-strip">
+  <div><span class="section-kicker">THE BIG IDEA</span><h2>Not every ending<br>is an ending.</h2></div>
+  <p>Some machines became landmarks. Some kept orbiting. Some sent back discoveries long after their builders had gone home. SpaceEcho tells their stories with curiosity, care and evidence.</p>
+  <div class="strip-orbit">✧</div>
+</section>
+
+
+
+<section class="lab-section" id="moonlab">
+ <div class="lab-glow"></div><div class="section-head lab-heading"><div><span class="section-kicker">REAL NASA DATA · APOLLO 12–16</span><h2>The Moon has a memory.</h2><p>After astronauts left, seismic instruments kept listening. Explore the Apollo Passive Seismic Experiment catalog.</p></div><div class="data-stamp"><b>NASA PDS</b><small>DOI 10.17189/1520573</small></div></div>
+ <div class="lab-layout">
+  <div class="lab-copy"><div class="big-number" id="recordCount">13,057</div><div class="big-label">records in the expanded event catalog</div>
+   <p>The Apollo seismic network recorded lunar activity from 1969 to 1977. This catalog brings together event times, signal descriptors and station-related fields. It is a catalog of observations — not a raw waveform playback.</p>
+   <div class="lab-facts"><div><b>4</b><span>Apollo stations represented</span></div><div><b>9 years</b><span>Catalog period</span></div><div><b>38</b><span>Catalog columns</span></div></div>
+   <a class="text-link" href="https://pds.nasa.gov/ds-view/pds/viewBundle.jsp?identifier=urn%3Anasa%3Apds%3Aapollo_seismic_event_catalog&version=1.0" target="_blank" rel="noopener">Open the original NASA PDS archive ↗</a>
+  </div>
+  <div class="chart-card"><div class="chart-top"><div><span class="chart-kicker">CATALOG ACTIVITY</span><h3>Records by year</h3></div><span class="chart-tag">1969–1977</span></div><div id="yearChart" class="bar-chart" role="img" aria-label="Number of catalog records by year"></div><div class="chart-foot"><span>Year field from source column Y (two-digit year)</span><span>Source: Weber, 2019</span></div></div>
+ </div>
+ <div class="data-explorer">
+  <div class="data-explorer-head"><div><span class="chart-kicker">LOOK CLOSER</span><h3>Browse the catalog</h3><p>Search the source records. Original column names are retained.</p></div><input id="dataSearch" type="search" placeholder="Search year, comments, grade…" aria-label="Search catalog"></div>
+  <div class="table-wrap"><table><thead><tr><th>Year (Y)</th><th>Julian day (JD)</th><th>Time field (S)</th><th>Field E</th><th>Grade</th><th>Traces</th><th>Comments</th></tr></thead><tbody id="dataRows"><tr><td colspan="7">Loading NASA catalog…</td></tr></tbody></table></div>
+  <div class="table-bottom"><span id="tableCount">Loading records…</span><button class="button small ghost" id="showMore">Show more records ↓</button></div>
+ </div>
+ <div class="location-card"><div><span class="chart-kicker">A SECOND VIEW OF THE DATA</span><h3>Cataloged lunar source locations</h3><p>Coordinates from the Gagnepian 2006 catalog. These are event-source coordinates, not the locations of abandoned hardware.</p><div class="location-legend"><span><i class="dot impact"></i> Impact / mission event labels</span><span><i class="dot other"></i> Other catalog entries</span></div></div><div class="moon-map" id="moonMap" role="img" aria-label="Plot of cataloged lunar event coordinates"></div></div>
+</section>
+
+
+
+
+
+
+
+<section class="about-section" id="about">
+ <div><span class="section-kicker">ABOUT SPACEECHO</span><h2>Remembering the machines<br>that moved us forward.</h2></div>
+ <div class="about-copy"><p>SpaceEcho is an independent educational storytelling project created for the 2026 NASA Space Apps Challenge. It is designed for curious school-age explorers and anyone who wants to understand the human stories behind space hardware.</p><p><strong>Evidence matters.</strong> We distinguish confirmed facts from illustrative visuals and avoid assigning precise locations when mission records do not establish them. The full-globe Moon and Mars overview illustrations are AI-generated and are not NASA imagery or scientific basemaps. Mission photographs are shown separately with captions and source credits. Story pins are illustrative and are not precise geographic coordinates.</p><div class="disclaimer">SpaceEcho is not affiliated with, endorsed by, or an official product of NASA. NASA names and public data are referenced for educational purposes. Mission images and data remain subject to their original source terms.</div></div>
+</section>
+</main>
+<footer class="site-foot"><b>SpaceEcho</b> · The missions ended. Their stories didn't.<br>Independent educational project · Not affiliated with NASA · <a href="SOURCES.md">Sources</a> · <a href="assets/IMAGE_CREDITS.md">Image credits</a></footer>
+
+
+<div class="guide-overlay" id="guideOverlay" aria-hidden="true"><section class="guide-card" role="dialog" aria-modal="true" aria-labelledby="guideTitle"><div class="guide-top"><span>SPACEECHO FIELD GUIDE</span><button type="button" id="guideSkip" aria-label="Close guide">×</button></div><div class="guide-orbit" aria-hidden="true">✦</div><p class="guide-step" id="guideStep">WELCOME · 01 / 05</p><h2 id="guideTitle">Your journey starts here.</h2><p id="guideCopy">Choose a world and explore the missions that left their mark.</p><div class="guide-progress" id="guideProgress"><i class="active"></i><i></i><i></i><i></i><i></i></div><div class="guide-actions"><button type="button" class="guide-later" id="guideLater">Skip guide</button><button type="button" class="guide-next" id="guideNext">Next <span>→</span></button></div></section></div>
+<button class="quiz-fab" id="quizFab" type="button" aria-label="Open explorer quiz" title="Test what you learned">✧</button>
+<div class="quiz-drawer" id="quizDrawer" aria-hidden="true"><div class="quiz-drawer-head"><div><span>JUNIOR EXPLORER</span><h3 id="quizWorldTitle">Moon mission quiz</h3></div><button id="quizClose" aria-label="Close quiz">×</button></div><div id="quizDrawerBody"><p>Choose the quiz icon after exploring a world to test what you learned.</p></div></div>
+<div class="modal" id="storyModal" aria-hidden="true"><div class="modal-backdrop" data-close></div><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" data-close aria-label="Close">×</button><div id="modalContent"></div></div></div>
+<script src="app.js"></script>
+<script src="solar.js"></script><script src="guide.js"></script><script src="fx.js"></script>
+</body></html>
